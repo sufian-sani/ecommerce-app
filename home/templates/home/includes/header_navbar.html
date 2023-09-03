@@ -44,7 +44,7 @@
                         <li class="active"><a href="{% url 'home' %}">Home</a></li>
                         <li><a href="#">Women’s</a></li>
                         <li><a href="#">Men’s</a></li>
-                        <li><a href="{% url 'shop' %}">Shop</a></li>
+                        <li><a href="{% url 'shop:shop' %}">Shop</a></li>
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
                                 <li><a href="./product-details.html">Product Details</a></li>
@@ -53,7 +53,7 @@
                                 <li><a href="./blog-details.html">Blog Details</a></li>
                             </ul>
                         </li>
-                        <li><a href="{% url 'blog' %}">Blog</a></li>
+                        <li><a href="{% url 'blog:blog' %}">Blog</a></li>
                         <li><a href="./contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -62,7 +62,7 @@
                 <div class="header__right">
                     <div class="header__right__auth">
                         <a href="#">Login</a>
-                        <a href="#">Register</a>
+                        <a href="{% url 'accounts:singup' %}">Register</a>
                     </div>
                     <ul class="header__right__widget">
                         <li><span class="icon_search search-switch"></span></li>

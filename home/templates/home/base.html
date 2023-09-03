@@ -26,11 +26,17 @@
         <link rel="stylesheet" href="{% static '' %}css/style.css" type="text/css">
     </head>
     <body>
+        <!-- Header Section Begin -->
+        {% include 'home/includes/header_navbar.html' %}
+        <!-- Header Section End -->
 
         {% block content %}
             
         {% endblock content %}
 
+        <!-- Search Begin -->
+        {% include 'home/includes/search_begin.html' %}
+        <!-- Search End -->
 
         <!-- Js Plugins -->
         <script src="{% static '' %}js/jquery-3.3.1.min.js"></script>
