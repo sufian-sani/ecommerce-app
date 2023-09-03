@@ -9,6 +9,7 @@ from django.http import HttpResponse
 
 class Shop(View):
     def get(self, request):
+        activate = 'shop'
         # <view logic>
-        return render(request,'shop/shop.html')
+        return render(request,'shop/shop.html',{'activate':activate})
 

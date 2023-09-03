@@ -6,6 +6,7 @@ from django.http import HttpResponse
 
 class Index(View):
     def get(self, request):
+        activate = 'home'
         # <view logic>
-        return render(request,'home/index.html')
+        return render(request,'home/index.html',{'activate':activate})
 
