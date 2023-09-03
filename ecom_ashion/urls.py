@@ -20,7 +20,9 @@ from django.conf import settings
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 
 urlpatterns = [
-    path('', include('home.urls')),
+    path('', include('home.urls'),name='home'),
+    path('shop', include('shop.urls'),name='shop'),
+    path('blog', include('blog.urls'),name='blog'),
     path('admin/', admin.site.urls),
 ]
 
