@@ -7,7 +7,7 @@ class Category(models.Model):
     parent = models.ForeignKey('self', related_name='children', on_delete=models.CASCADE, blank = 
     True, null=True)
     title = models.CharField(max_length=100) 
-    slug = AutoSlugField(populate_from='title', unique=True, null=False, editable=False)
+    slug = models.SlugField(max_length=100,unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

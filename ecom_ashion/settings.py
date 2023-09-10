@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'shop',
     'blog',
     'category',
+    #___extra__
+    'colorfield',
 ]
 
 MIDDLEWARE = [

@@ -9,6 +9,7 @@ from django.http import HttpResponse
 
 class Blog(View):
     def get(self, request):
+        activate="blog"
         # <view logic>
-        return render(request,'blog/blog.html')
+        return render(request,'blog/blog.html',{'activate':activate})
 
