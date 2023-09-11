@@ -6,18 +6,27 @@ from django.urls import reverse
 # Create your models here.
 
 
-class Variation(models.Model):
+class Color(models.Model):
     color=ColorField()
+
+    def __str__(self):
+        return self.color
+    
+class Size(models.Model):
     size=models.CharField(max_length=2)
+    
+    def __str__(self):
+        return self.size
 class Product(models.Model):
     product_name = models.CharField(max_length=255)
     brand = models.CharField(max_length=255)
     review=models.CharField(max_length=255,blank=True)
     price = models.IntegerField()
+    dicount_price=models.IntegerField(null=True,blank=True)
     slug = models.SlugField(max_length=200,unique=True)
-    description = models.TextField(max_length=500,blank=True)
-    available_color = models.ForeignKey(Variation,null=True,blank=True,on_delete=models.DO_NOTHING,related_name='available_color')
-    available_size = models.ForeignKey(Variation,null=True,blank=True,on_delete=models.DO_NOTHING,related_name='available_size')
+    description = models.TextField(blank=True)
+    available_color = models.ManyToManyField(Color,blank=True,related_name='available_color')
+    available_size = models.ManyToManyField(Size,blank=True,related_name='available_size')
     images = models.ImageField(upload_to = 'photo/products')
     stock = models.IntegerField()
     is_available = models.BooleanField(default=True)

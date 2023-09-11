@@ -1,113 +1,7 @@
-<!DOCTYPE html>
-<html lang="zxx">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Ashion Template">
-    <meta name="keywords" content="Ashion, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ashion | Template</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-</head>
-
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Offcanvas Menu Begin -->
-    <div class="offcanvas-menu-overlay"></div>
-    <div class="offcanvas-menu-wrapper">
-        <div class="offcanvas__close">+</div>
-        <ul class="offcanvas__widget">
-            <li><span class="icon_search search-switch"></span></li>
-            <li><a href="#"><span class="icon_heart_alt"></span>
-                <div class="tip">2</div>
-            </a></li>
-            <li><a href="#"><span class="icon_bag_alt"></span>
-                <div class="tip">2</div>
-            </a></li>
-        </ul>
-        <div class="offcanvas__logo">
-            <a href="./index.html"><img src="img/logo.png" alt=""></a>
-        </div>
-        <div id="mobile-menu-wrap"></div>
-        <div class="offcanvas__auth">
-            <a href="#">Login</a>
-            <a href="#">Register</a>
-        </div>
-    </div>
-    <!-- Offcanvas Menu End -->
-
-    <!-- Header Section Begin -->
-    <header class="header">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xl-3 col-lg-2">
-                    <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-7">
-                    <nav class="header__menu">
-                        <ul>
-                            <li><a href="./index.html">Home</a></li>
-                            <li><a href="#">Women’s</a></li>
-                            <li><a href="#">Men’s</a></li>
-                            <li class="active"><a href="./shop.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="./product-details.html">Product Details</a></li>
-                                    <li><a href="./shop-cart.html">Shop Cart</a></li>
-                                    <li><a href="./checkout.html">Checkout</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3">
-                    <div class="header__right">
-                        <div class="header__right__auth">
-                            <a href="#">Login</a>
-                            <a href="#">Register</a>
-                        </div>
-                        <ul class="header__right__widget">
-                            <li><span class="icon_search search-switch"></span></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span>
-                                <div class="tip">2</div>
-                            </a></li>
-                            <li><a href="#"><span class="icon_bag_alt"></span>
-                                <div class="tip">2</div>
-                            </a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="canvas__open">
-                <i class="fa fa-bars"></i>
-            </div>
-        </div>
-    </header>
-    <!-- Header Section End -->
+{% extends 'home/base.html' %}
+{% block content %}
+{% load static %}
+{% include 'home/includes/header_navbar.html' %}
 
     <!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
@@ -133,31 +27,32 @@
                     <div class="product__details__pic">
                         <div class="product__details__pic__left product__thumb nice-scroll">
                             <a class="pt active" href="#product-1">
-                                <img src="img/product/details/thumb-1.jpg" alt="">
+                                <img src="{{ single_product.images.url }}" alt="">
                             </a>
                             <a class="pt" href="#product-2">
-                                <img src="img/product/details/thumb-2.jpg" alt="">
+                                <img src="{{ single_product.images.url }}" alt="">
                             </a>
                             <a class="pt" href="#product-3">
-                                <img src="img/product/details/thumb-3.jpg" alt="">
+                                <img src="{{ single_product.images.url }}" alt="">
                             </a>
                             <a class="pt" href="#product-4">
-                                <img src="img/product/details/thumb-4.jpg" alt="">
+                                <img src="{{ single_product.images.url }}" alt="">
                             </a>
                         </div>
                         <div class="product__details__slider__content">
                             <div class="product__details__pic__slider owl-carousel">
-                                <img data-hash="product-1" class="product__big__img" src="img/product/details/product-1.jpg" alt="">
-                                <img data-hash="product-2" class="product__big__img" src="img/product/details/product-3.jpg" alt="">
-                                <img data-hash="product-3" class="product__big__img" src="img/product/details/product-2.jpg" alt="">
-                                <img data-hash="product-4" class="product__big__img" src="img/product/details/product-4.jpg" alt="">
+                                <img data-hash="product-1" class="product__big__img" src="{{ single_product.images.url }}" alt="">
+                                <img data-hash="product-2" class="product__big__img" src="{{ single_product.images.url }}" alt="">
+                                <img data-hash="product-3" class="product__big__img" src="{{ single_product.images.url }}" alt="">
+                                <img data-hash="product-4" class="product__big__img" src="{{ single_product.images.url }}" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
+                    
                     <div class="product__details__text">
-                        <h3>Essential structured blazer <span>Brand: SKMEIMore Men Watches from SKMEI</span></h3>
+                        <h3>{{single_product.product_name}} <span>Brand: {{single_product.brand}}</span></h3>
                         <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -166,9 +61,8 @@
                             <i class="fa fa-star"></i>
                             <span>( 138 reviews )</span>
                         </div>
-                        <div class="product__details__price">$ 75.0 <span>$ 83.0</span></div>
-                        <p>Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur
-                        magni lores eos qui ratione voluptatem sequi nesciunt.</p>
+                        <div class="product__details__price">$ {{single_product.dicount_price}} <span>$ {{single_product.price}}</span></div>
+                        <p>{{single_product.description}}</p>
                         <div class="product__details__button">
                             <div class="quantity">
                                 <span>Quantity:</span>
@@ -305,7 +199,8 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/related/rp-1.jpg">
+                        <div class="product__item__pic set-bg">
+                            <a href="{{ single_product.get_url }}"> <img src="{{ single_product.images.url }}"></a>
                             <div class="label new">New</div>
                             <ul class="product__hover">
                                 <li><a href="img/product/related/rp-1.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
@@ -526,29 +421,6 @@
         </div>
     </footer>
     <!-- Footer Section End -->
-
-    <!-- Search Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search End -->
-
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
-
-</html>
+    {% include 'home/includes/footer_section.html' %}
+    <!-- Footer Section End -->
+    {% endblock content %}
