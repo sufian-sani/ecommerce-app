@@ -41,7 +41,7 @@
             <div class="col-xl-6 col-lg-7">
                 <nav class="header__menu">
                     <ul>
-                        <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                        <li class="active"><a href="{% url 'home:home' %}">Home</a></li>
                         <li><a href="#">Women’s</a></li>
                         <li><a href="#">Men’s</a></li>
                         <li><a href="{% url 'shop:shop' %}">Shop</a></li>
@@ -61,8 +61,12 @@
             <div class="col-lg-3">
                 <div class="header__right">
                     <div class="header__right__auth">
-                        <a href="#">Login</a>
-                        <a href="{% url 'accounts:singup' %}">Register</a>
+                        {% if request.user.username %}
+                            <a href="{% url 'accounts:signout' %}">Log Out</a>
+                        {% else %}
+                            <a href="{% url 'accounts:signin' %}">Login</a>
+                            <a href="{% url 'accounts:singup' %}">Register</a>
+                        {% endif %}
                     </div>
                     <ul class="header__right__widget">
                         <li><span class="icon_search search-switch"></span></li>
