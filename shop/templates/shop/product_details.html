@@ -91,39 +91,23 @@
                                 <li>
                                     <span>Available color:</span>
                                     <div class="color__checkbox">
-                                        <label for="red">
-                                            <input type="radio" name="color__radio" id="red" checked>
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label for="black">
-                                            <input type="radio" name="color__radio" id="black">
-                                            <span class="checkmark black-bg"></span>
-                                        </label>
-                                        <label for="grey">
-                                            <input type="radio" name="color__radio" id="grey">
-                                            <span class="checkmark grey-bg"></span>
-                                        </label>
+                                        {% for color in single_product.available_color.all  %}
+                                            <label for="{{color}}">
+                                                <input type="radio" name="color__radio" id="{{color}}" checked>
+                                                <span class="checkmark {{color}}-bg"></span>
+                                            </label>
+                                        {% endfor %}
                                     </div>
                                 </li>
                                 <li>
                                     <span>Available size:</span>
                                     <div class="size__btn">
-                                        <label for="xs-btn" class="active">
-                                            <input type="radio" id="xs-btn">
-                                            xs
-                                        </label>
-                                        <label for="s-btn">
-                                            <input type="radio" id="s-btn">
-                                            s
-                                        </label>
-                                        <label for="m-btn">
-                                            <input type="radio" id="m-btn">
-                                            m
-                                        </label>
-                                        <label for="l-btn">
-                                            <input type="radio" id="l-btn">
-                                            l
-                                        </label>
+                                        {% for size in single_product.available_size.all  %}
+                                            <label for="{{size}}-btn" class="active">
+                                                <input type="radio" id="{{size}}-btn">
+                                                {{size}}
+                                            </label>
+                                        {% endfor %}
                                     </div>
                                 </li>
                                 <li>
